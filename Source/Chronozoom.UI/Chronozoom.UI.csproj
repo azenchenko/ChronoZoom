@@ -513,6 +513,9 @@
     <Content Include="css\_vars.css.map">
       <DependentUpon>_vars.css</DependentUpon>
     </Content>
+    <Content Include="maps-topojson\asia.json" />
+    <Content Include="maps-topojson\eurasia.json" />
+    <Content Include="maps-topojson\europe.json" />
     <None Include="Properties\PublishProfiles\cz-file-system.pubxml" />
     <None Include="Properties\PublishProfiles\cz-oct2014-alex-museum.pubxml" />
     <Content Include="ui\auth-edit-map-view-form.min.js.map">

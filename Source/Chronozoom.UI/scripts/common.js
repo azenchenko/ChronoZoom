@@ -67,8 +67,17 @@ var CZ;
             Common.map = new CZ.Map(Common.mapLayerSelector);
             Common.map.init();
 
-            AddScript("/scripts/maps/map-africa.js");
+            AddScript("/scripts/maps/map-world.js");
+            AddScript("/scripts/maps/map-america.js");
+            AddScript("/scripts/maps/map-north-america.js");
+            AddScript("/scripts/maps/map-south-america.js");
             AddScript("/scripts/maps/map-usa.js");
+            AddScript("/scripts/maps/map-eurasia.js");
+            AddScript("/scripts/maps/map-europe.js");
+            AddScript("/scripts/maps/map-asia.js");
+            AddScript("/scripts/maps/map-africa.js");
+            AddScript("/scripts/maps/map-oceania.js");
+
         }
         Common.initialize = initialize;
 

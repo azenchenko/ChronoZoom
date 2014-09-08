@@ -23,11 +23,35 @@ var CZ;
                 this.timeline = formInfo.context.timeline;
 
                 switch (formInfo.context.mapType) {
-                    case "africa":
-                        map = CZ.Map.prototype.MapAfrica.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                    case "world":
+                        map = CZ.Map.prototype.MapWorld.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "america":
+                        map = CZ.Map.prototype.MapAmerica.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "north-america":
+                        map = CZ.Map.prototype.MapNorthAmerica.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "south-america":
+                        map = CZ.Map.prototype.MapSouthAmerica.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
                         break;
                     case "usa-albers":
                         map = CZ.Map.prototype.MapUSA.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "eurasia":
+                        map = CZ.Map.prototype.MapEurasia.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "europe":
+                        map = CZ.Map.prototype.MapEurope.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "asia":
+                        map = CZ.Map.prototype.MapAsia.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "oceania":
+                        map = CZ.Map.prototype.MapOceania.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
+                        break;
+                    case "africa":
+                        map = CZ.Map.prototype.MapAfrica.call(CZ.Common.map, this.exhibits, formInfo.context.timeline);
                         break;
                 }
 

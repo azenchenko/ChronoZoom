@@ -1190,15 +1190,38 @@ var CZ;
                             });
 
                         switch (this.parent.mapType) {
-                            case "africa":
-                                CZ.Map.prototype.MapAfrica.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                            case "world":
+                                CZ.Map.prototype.MapWorld.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "america":
+                                CZ.Map.prototype.MapAmerica.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "north-america":
+                                CZ.Map.prototype.MapNorthAmerica.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "south-america":
+                                CZ.Map.prototype.MapSouthAmerica.call(CZ.Common.map, this.parent.exhibits, this.parent);
                                 break;
                             case "usa-albers":
                                 CZ.Map.prototype.MapUSA.call(CZ.Common.map, this.parent.exhibits, this.parent);
                                 break;
+                            case "eurasia":
+                                CZ.Map.prototype.MapEurasia.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "europe":
+                                CZ.Map.prototype.MapEurope.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "asia":
+                                CZ.Map.prototype.MapAsia.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "oceania":
+                                CZ.Map.prototype.MapOceania.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
+                            case "africa":
+                                CZ.Map.prototype.MapAfrica.call(CZ.Common.map, this.parent.exhibits, this.parent);
+                                break;
                         }
 
-                        // CZ.Map.prototype.MapAfrica.call(CZ.Common.map, this.parent.exhibits, this.parent);
                         CZ.Common.map.show();
 
                         return true;
