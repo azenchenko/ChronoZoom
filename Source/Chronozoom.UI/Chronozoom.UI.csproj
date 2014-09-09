@@ -88,7 +88,6 @@
     <Content Include="css\timescale.min.css">
       <DependentUpon>timescale.css</DependentUpon>
     </Content>
-    <Content Include="css\tooltipster.css" />
     <Content Include="css\_colors.css">
       <DependentUpon>_colors.less</DependentUpon>
     </Content>
@@ -187,7 +186,6 @@
     <Content Include="scripts\external\audiojs\audiojs\player-graphics.gif" />
     <Content Include="scripts\external\jquery.autonumeric-1.9.24.min.js" />
     <Content Include="scripts\external\jquery.powertip.js" />
-    <Content Include="scripts\external\jquery.tooltipster.min.js" />
     <Content Include="scripts\gestures.min.js">
       <DependentUpon>gestures.js</DependentUpon>
     </Content>
@@ -385,6 +383,10 @@
     <Content Include="ui\header-session-expired-form.min.js">
       <DependentUpon>header-session-expired-form.js</DependentUpon>
     </Content>
+    <Content Include="ui\map-area-events-listbox.html" />
+    <Content Include="ui\map-area-events-listbox.js" />
+    <Content Include="ui\map-area-exhibits-form.html" />
+    <Content Include="ui\map-area-exhibits-form.js" />
     <Content Include="ui\new-map-event-listbox.js" />
     <Content Include="ui\mediapicker-form.min.js">
       <DependentUpon>mediapicker-form.js</DependentUpon>

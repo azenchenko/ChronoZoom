@@ -617,35 +617,44 @@ input.error {
   box-sizing: border-box;
   width: 300px;
 }
+.cz-form-map-area-exhibits {
+  top: 100px !important;
+}
 .cz-form-new-map-event,
-.cz-form-current-map-events {
+.cz-form-current-map-events,
+.cz-form-map-area-exhibits {
   position: absolute;
   top: 0;
   width: 300px;
 }
 .cz-form-new-map-event .cz-form-content,
-.cz-form-current-map-events .cz-form-content {
+.cz-form-current-map-events .cz-form-content,
+.cz-form-map-area-exhibits .cz-form-content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 300px;
 }
 .cz-form-new-map-event .cz-form-content .cz-form-msg-placeholder,
-.cz-form-current-map-events .cz-form-content .cz-form-msg-placeholder {
+.cz-form-current-map-events .cz-form-content .cz-form-msg-placeholder,
+.cz-form-map-area-exhibits .cz-form-content .cz-form-msg-placeholder {
   margin: 1em 0;
 }
 .cz-form-new-map-event .cz-listitem,
-.cz-form-current-map-events .cz-listitem {
+.cz-form-current-map-events .cz-listitem,
+.cz-form-map-area-exhibits .cz-listitem {
   cursor: pointer;
 }
 .cz-form-new-map-event .cz-listitem.selected,
-.cz-form-current-map-events .cz-listitem.selected {
+.cz-form-current-map-events .cz-listitem.selected,
+.cz-form-map-area-exhibits .cz-listitem.selected {
   border: 2px solid yellow;
 }
 .cz-form-new-map-event {
   left: 0;
 }
-.cz-form-current-map-events {
+.cz-form-current-map-events,
+.cz-form-map-area-exhibits {
   right: 0;
 }
 .cz-map-event-listitem-icon {

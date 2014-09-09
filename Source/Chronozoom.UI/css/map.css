@@ -79,6 +79,9 @@ input.error {
   left: 0;
   z-index: 160;
 }
+#map-layer .active-selected {
+  fill: blue;
+}
 .map-title {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

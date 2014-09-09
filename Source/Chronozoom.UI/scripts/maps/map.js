@@ -117,12 +117,16 @@
          * @param   caller  {Object}    Event caller.
          */
         Map.prototype.onAreaClicked = function (area, caller) {
+            this.active.classed("active-selected", false);
+
             if (CZ.Authoring.isActive) {
                 this.$map.trigger("mapareaclicked", {
                     mapAreaId: area.id
                 });
             }
             else {
+                var exhibits = [];
+
                 this.active.classed("active", false);
                 this.active = d3.select(caller).classed("active", true);
 
@@ -138,6 +142,22 @@
                     .duration(750)
                     .call(this.behaviorZoom.translate(translate).scale(scale).event)
                     .selectAll(".subunit-label").style("font-size", 15 / d3.event.scale + "px");
+
+                // Initialize tooltips.
+                Object.keys(_this.mapData).filter(function (key) {
+                    return _this.mapData[key].mapAreaId && _this.mapData[key].mapAreaId === area.id;
+                }).forEach(function (key) {
+                    exhibits.push(_this.mapData[key]);
+                });
+
+                // Highlight active area that has events.
+                if (exhibits.length > 0) {
+                    this.active.classed("active-selected", true);
+                    window._MapAreaExhibitsForm.show(exhibits);
+                }
+                else {
+                    window._MapAreaExhibitsForm.close();
+                }
             }
         };
 
@@ -218,6 +238,8 @@
 
                 _this.$contentContainer.append($container);
             });
+
+            window._MapAreaExhibitsForm.container.hide();
         };
 
         /**
@@ -248,6 +270,7 @@
             this.$infoCloseBtn = this.$infoPanel.find(".map-view-exhibit-info-close-btn")
                 .click(function () {
                     _this.$infoPanel.hide();
+                    window._MapAreaExhibitsForm.container.show();
                 });;
             this.$contentContainer = this.$infoPanel.find(".content-container");
         };
