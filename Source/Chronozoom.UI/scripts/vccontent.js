@@ -1176,9 +1176,9 @@ var CZ;
                         this,
                         layerid,
                         id + "__mapView",
-                        btnX, 
+                        btnX,
                         btnY,
-                        0.7 * this.titleObject.height,
+                        this.titleObject.height,
                         0.7 * this.titleObject.height,
                         "/images/mapview.svg"
                     );

@@ -66,6 +66,7 @@
     <Content Include="css\forms.min.css">
       <DependentUpon>forms.less</DependentUpon>
     </Content>
+    <Content Include="css\jquery.powertip.css" />
     <Content Include="css\map.css">
       <DependentUpon>map.less</DependentUpon>
     </Content>
@@ -185,6 +186,7 @@
     <Content Include="scripts\external\audiojs\audiojs\audiojs.swf" />
     <Content Include="scripts\external\audiojs\audiojs\player-graphics.gif" />
     <Content Include="scripts\external\jquery.autonumeric-1.9.24.min.js" />
+    <Content Include="scripts\external\jquery.powertip.js" />
     <Content Include="scripts\external\jquery.tooltipster.min.js" />
     <Content Include="scripts\gestures.min.js">
       <DependentUpon>gestures.js</DependentUpon>
@@ -199,7 +201,15 @@
       <DependentUpon>layout.js</DependentUpon>
     </Content>
     <Content Include="scripts\maps\map-africa.js" />
+    <Content Include="scripts\maps\map-america.js" />
+    <Content Include="scripts\maps\map-asia.js" />
+    <Content Include="scripts\maps\map-eurasia.js" />
+    <Content Include="scripts\maps\map-europe.js" />
+    <Content Include="scripts\maps\map-north-america.js" />
+    <Content Include="scripts\maps\map-oceania.js" />
+    <Content Include="scripts\maps\map-south-america.js" />
     <Content Include="scripts\maps\map-usa.js" />
+    <Content Include="scripts\maps\map-world.js" />
     <Content Include="scripts\maps\map.js" />
     <Content Include="scripts\media.min.js">
       <DependentUpon>media.js</DependentUpon>
@@ -516,6 +526,11 @@
     <Content Include="maps-topojson\asia.json" />
     <Content Include="maps-topojson\eurasia.json" />
     <Content Include="maps-topojson\europe.json" />
+    <Content Include="maps-topojson\america.json" />
+    <Content Include="maps-topojson\north-america.json" />
+    <Content Include="maps-topojson\oceania.json" />
+    <Content Include="maps-topojson\south-america.json" />
+    <Content Include="maps-topojson\world.json" />
     <None Include="Properties\PublishProfiles\cz-file-system.pubxml" />
     <None Include="Properties\PublishProfiles\cz-oct2014-alex-museum.pubxml" />
     <Content Include="ui\auth-edit-map-view-form.min.js.map">

@@ -23,8 +23,6 @@ var CZ;
                 this.nextButton = container.find(formInfo.nextButton);
                 this.exhibits = formInfo.context.exhibits;
                 this.timeline = formInfo.context.timeline;
-                // this.formInfoContext = formInfo.context;
-                // this.onMapExhibits = formInfo.onMapExhibits;
 
                 this.nextButton.off();
                 this.navButton.off();
@@ -43,8 +41,6 @@ var CZ;
                 }
 
                 this.navButton.on("click", function () {
-                    // _this.prevForm.onMapExhibits = _this.;
-
                     _this.back();
                 });
 
@@ -65,32 +61,17 @@ var CZ;
                                 exhibits: _this.exhibits,
                                 mapType: _this.mapType
                             });
-                            // var exhibits = [];
-
-                            // if (_this.onMapExhibits) {
-                            //     exhibits = _this.onMapExhibits;
-                            // }
-                            // else {
-                            //     exhibits = _this.formInfoContext.timeline.exhibits.map(function (exhibit) {
-                            //         return exhibit.mapAreaId = null;
-                            //     });
-                            // }
-
-                            // CZ.Authoring.showEditMapViewForm(_this.formInfoContext.timeline, _this, _this.mapType, exhibits);
                         }
                     }
                     else {
                         _this.hide(true);
                         _this.timeline.mapType = _this.mapType;
 
-
-
                         CZ.Authoring.showEditMapViewForm(_this, {
                             timeline: _this.timeline,
                             exhibits: _this.exhibits,
                             mapType: _this.mapType
                         });
-                        // CZ.Authoring.showEditMapViewForm(_this.formInfoContext.timeline, _this, _this.mapType, _this.onMapExhibits);
                     }
                 });
             };

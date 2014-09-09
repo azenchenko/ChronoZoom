@@ -417,17 +417,17 @@ var CZ;
 
             var margin = Math.min(tlHeight, tlW) * CZ.Settings.timelineHeaderMargin;
 
-            if (width + 2 * margin > tlW) {
-                width = tlW - 2 * margin;
+            if (width + 3 * margin > tlW) {
+                width = tlW - 3 * margin;
                 height = width * 100.0 / size.width;
             }
 
             return {
-                width: width - 2.1 * height,
+                width: width - 3 * height,
                 height: height,
                 marginTop: tlHeight - height - margin,
                 marginLeft: margin,
-                bboxWidth: width + 2 * margin - 2.1 * height,
+                bboxWidth: width + 2 * margin - 3 * height,
                 bboxHeight: height + 2 * margin
             };
         }

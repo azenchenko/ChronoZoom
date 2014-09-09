@@ -113,15 +113,13 @@
         /**
          * Handler for click over map area.
          *
-         * @param   area    {string}    Id of map area that was clicked.
+         * @param   area    {string}    Map area that was clicked.
          * @param   caller  {Object}    Event caller.
          */
-        Map.prototype.onAreaClicked = function (areaId, caller) {
-            // if (_this.active.node() === _this) return resetViewport();
-            
+        Map.prototype.onAreaClicked = function (area, caller) {
             if (CZ.Authoring.isActive) {
                 this.$map.trigger("mapareaclicked", {
-                    mapAreaId: areaId
+                    mapAreaId: area.id
                 });
             }
             else {
@@ -147,6 +145,7 @@
          * Show map.
          */
         Map.prototype.show = function (args) {
+            $('#wait').show();
             this.$map.show();
         };
 
@@ -190,7 +189,6 @@
             _this.$contentContainer.empty();
             _this.$header.text(event.data.title);
 
-            // it.contentItems.forEach(function (item) {
             info.forEach(function (item) {
                 var $container = $("<div></div>", {
                     class: "map-view-exhibit-info"
@@ -233,6 +231,8 @@
          * Loads data associated with map areas to the map.
          */
         Map.prototype.loadData = function (data) {
+            $('#wait').hide();
+
             if (data === this.mapData) {
                 return;
             }
@@ -253,9 +253,18 @@
         };
 
         Map.prototype.generateTooltips = function () {
+            $(".subunit").each(function () {
+                var $this = $(this),
+                    name = $this.attr("data-name");
+
+                $this.data("powertip", name)
+                    .attr("data-powertip", name)
+                    .powerTip({
+                        followMouse: true
+                    });
+            });
+
             var ids = [],
-                $container,
-                template = $("#MapTooltipExhibitTemplate .tooltip-exhibit-container"),
                 _this = this;
 
             // Create list of ids for map areas that are in mapData.
@@ -269,43 +278,10 @@
 
             // Create tooltip for every map area contains all exhibits associated with this map area.
             ids.forEach(function (id) {
-                var _$container = $("<div></div>");
-
-                Object.keys(_this.mapData).filter(function (key) {
-                    return _this.mapData[key].mapAreaId && _this.mapData[key].mapAreaId === id;
-                }).forEach(function (key) {
-                    var exhibit = _this.mapData[key];
-
-                    var $tooltipItem = template.clone(true, true),
-                        date = CZ.Dates.convertCoordinateToYear(exhibit.infodotDescription.date);
-                        // width = $(_this.geoMapLayer.select(".subunit[data-id='" + id + "']")).width();
-
-                    $tooltipItem.on("click", {
-                            id: exhibit.mapAreaId,
-                            info: exhibit.contentItems,
-                            title: exhibit.infodotDescription.title + " (" + date.year + " " + date.regime + ")"
-                        },
-                        CZ.Common.map.showMapAreaInfo)
-                        .attr("data-description", exhibit.infodotDescription.title)
-                        .attr("data-date", date.year + " " + date.regime)
-                        .find("img")
-                            .attr("src", exhibit.contentItems[0].uri);
-
-                    $tooltipItem.appendTo(_$container);
-                });
-
                 // Hack to add 'selected' class to subunit.
                 // Html tag contains too much data in attrs, so $.addClass doesn't work.
                 var _class = $(".subunit[data-id='" + id + "']").attr("class");
                 $(".subunit[data-id='" + id + "']").attr("class", _class + " selected");
-
-                $(_this.geoMapLayer.select(".subunit[data-id='" + id + "']"))
-                    .tooltipster({
-                        content: _$container,
-                        interactive: true,
-                        onlyOne: true//,
-                        // positionTracker: true
-                    });
             });
         };
 

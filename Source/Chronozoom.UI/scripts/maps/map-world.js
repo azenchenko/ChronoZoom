@@ -89,6 +89,9 @@
                     .attr("data-id", function (d) {
                         return d.id
                     })
+                    .attr("data-name", function (d) {
+                        return d.properties.name;
+                    })
                     .on("mousemove", function () {
                         if (_this.isDragging) _this.preventClick = true;
                     })
