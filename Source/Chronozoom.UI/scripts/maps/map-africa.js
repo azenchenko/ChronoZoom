@@ -130,7 +130,7 @@
                 return;
             }
 
-            _this.onAreaClicked.apply(_this, [area.id, this]);
+            _this.onAreaClicked.apply(_this, [area, this]);
         };
 
         function onZoom() {
